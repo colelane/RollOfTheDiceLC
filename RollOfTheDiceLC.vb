@@ -19,10 +19,27 @@ Module RollOfTheDiceLC
                 data(randomNumber) += 1
             Next
 
-            For i = 1 To UBound(data)
-                Console.WriteLine($" {i} has rolled {data(i)} times")
+            For i = 2 To UBound(data)
+                Console.Write("--------")
             Next
-            Console.WriteLine($"{vbNewLine}Press enter to roll the dice again")
+            Console.WriteLine()
+
+            For i = 2 To UBound(data)
+                Console.Write(i & "|" & vbTab)
+            Next
+            Console.WriteLine()
+
+            For i = 2 To UBound(data)
+                Console.Write("--------")
+            Next
+            Console.WriteLine()
+
+            For i = 2 To UBound(data)
+                'Console.Write(i)
+                Console.Write(data(i) & "|" & vbTab)
+            Next
+            Console.WriteLine(vbNewLine)
+            Console.WriteLine($"Press enter to roll the dice again")
             Console.ReadLine()
 
 
