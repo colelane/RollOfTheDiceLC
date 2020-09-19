@@ -8,13 +8,13 @@ Module RollOfTheDiceLC
         Dim randomNumber As Integer
         Dim userInput As String
         Dim data(12) As Integer
-        Dim column, row As Integer
+        Dim row As Integer
 
-        Console.WriteLine("Press enter to roll the dice.")
-        Console.ReadLine()
+        Console.WriteLine($"Press enter to roll the dice.")
+        userInput = Console.ReadLine()
         Do While userInput <> "Q"
 
-            For i = 1 To 100
+            For i = 1 To 1000
                 randomNumber = GetRandomNumber(1, 12)
                 data(randomNumber) += 1
             Next
@@ -38,14 +38,14 @@ Module RollOfTheDiceLC
                 'Console.Write(i)
                 Console.Write(data(i) & "|" & vbTab)
             Next
+
             Console.WriteLine(vbNewLine)
             Console.WriteLine($"Press enter to roll the dice again")
-            Console.ReadLine()
-
+            userInput = Console.ReadLine()
 
             'clears the array
-            For column = 1 To 12
-                data(column) = Nothing
+            For row = 1 To 12
+                data(row) = Nothing
             Next
         Loop
     End Sub
@@ -54,7 +54,6 @@ Module RollOfTheDiceLC
 
         Dim value As Single
 
-        Randomize()
 
         Do While value < minimum Or value > maximum
             value = ((maximum - minimum + 1) * Rnd()) + minimum
