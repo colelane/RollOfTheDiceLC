@@ -12,8 +12,8 @@ Module RollOfTheDiceLC
     Sub Main()
         Randomize()
         Dim randomNumber As Integer
-        Dim data(12) As Integer
-        Dim row As Integer
+        Dim data(10) As Integer
+
 
         Console.WriteLine($"Press enter to roll the dice. Press Q to quit.")
 
@@ -24,11 +24,11 @@ Module RollOfTheDiceLC
         Do
 
             For i = 1 To 1000
-                randomNumber = CInt(GetRandomNumber(1, 13))
-                data(randomNumber) += 1
+                randomNumber = CInt(GetRandomNumber(1, 12))
+                data(randomNumber - 2) += 1
             Next
 
-            For i = 2 To 12
+            For i = 0 To 10
                 Console.Write("--------")
             Next
             Console.WriteLine()
@@ -38,12 +38,12 @@ Module RollOfTheDiceLC
             Next
             Console.WriteLine()
 
-            For i = 2 To 12
+            For i = 0 To 10
                 Console.Write("--------")
             Next
             Console.WriteLine()
 
-            For i = 2 To 12
+            For i = 0 To 10
                 'Console.Write(i)
                 Console.Write($"{data(i)} |{vbTab}")
             Next
@@ -58,7 +58,7 @@ Module RollOfTheDiceLC
 
             'clears the array
             Erase data
-            ReDim data(12)
+            ReDim data(10)
 
         Loop
     End Sub
@@ -68,9 +68,9 @@ Module RollOfTheDiceLC
         Dim value As Double
 
 
-        Do While value < minimum Or value > maximum
-            value = ((maximum - minimum + 1) * Rnd()) + minimum - 1.5
-        Loop
+        Do
+            value = ((maximum - minimum + 1) * Rnd()) + minimum
+        Loop While value < minimum + 0.5 Or value > maximum + 0.5
         Return CInt(value)
 
     End Function
