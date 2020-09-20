@@ -27,7 +27,7 @@ Module RollOfTheDiceLC
         Do
 
             For i = 1 To 1000
-                randomNumber = CInt(GetRandomNumber(1, 12))
+                randomNumber = CInt(GetRandomNumber(1, 6))
                 data(randomNumber - 2) += 1
             Next
 
@@ -66,87 +66,16 @@ Module RollOfTheDiceLC
     Function GetRandomNumber(ByVal minimum As Single,
                              ByVal maximum As Single) As Single
 
-        Dim value As Single
-        'Dim rtrn As Integer
-        'Dim tmp As Integer
-        'Dim goodData As Boolean
-        'Do
-        '    For i = 1 To 6
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 7 Then
-        '            rtrn = 7
-        '            Exit Do
-        '        End If
-        '    Next
-        '    For i = 1 To 5
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 6 Then
-        '            rtrn = 6
-        '            Exit Do
-        '        ElseIf tmp = 8 Then
-        '            rtrn = 8
-        '            Exit Do
-        '        End If
-        '    Next
-        '    For i = 1 To 4
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 5 Then
-        '            rtrn = 5
-        '            Exit Do
-        '        ElseIf tmp = 9 Then
-        '            rtrn = 9
-        '            Exit Do
-        '        End If
-        '    Next
-        '    For i = 1 To 3
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 4 Then
-        '            rtrn = 4
-        '            Exit Do
-        '        ElseIf tmp = 10 Then
-        '            rtrn = 10
-        '            Exit Do
-        '        End If
-        '    Next
-        '    For i = 1 To 2
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 3 Then
-        '            rtrn = 3
-        '            Exit Do
-        '        ElseIf tmp = 11 Then
-        '            rtrn = 11
-        '            Exit Do
-        '        End If
-        '    Next
-        '    For i = 1 To 1
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 2 Then
-        '            rtrn = 2
-        '            Exit Do
-        '        ElseIf tmp = 12 Then
-        '            rtrn = 12
-        '            Exit Do
-        '        End If
-        '    Next
-        '    If rtrn = Nothing Then
-        '        goodData = False
-        '    Else
-        '        goodData = True
-        '    End If
-        'Loop Until goodData = True
-        'Return rtrn
-
+        Dim value1, value2 As Single
+        Dim sum As Integer
 
         Do
-            value = ((maximum - minimum + 1) * Rnd()) + minimum
-        Loop While value < minimum + 0.5 Or value > maximum + 0.5
-        Return CInt(value)
+            value1 = (maximum * Rnd()) + 0.5
+            value2 = (maximum * Rnd()) + 0.5
+        Loop While value1 < minimum - 0.5 Or value1 > maximum + 0.5 Or
+            value2 < minimum - 0.5 Or value2 > maximum + 0.5
+        sum = CInt(value1) + CInt(value2)
+        Return sum
 
     End Function
 
