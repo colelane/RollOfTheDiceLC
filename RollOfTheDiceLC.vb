@@ -31,19 +31,19 @@ Module RollOfTheDiceLC
                 data(randomNumber - 2) += 1
             Next
 
-            Console.Write(StrDup(121, "-"))
+            Console.Write(StrDup(138, "-"))
             Console.WriteLine()
 
-
+            Console.Write("Rollable Numbers:")
             For i = 2 To 12
                 txt = String.Format("{0, 10}", i) & "|"
                 Console.Write(txt)
             Next
             Console.WriteLine()
 
-            Console.Write(StrDup(121, "-"))
+            Console.Write(StrDup(138, "-"))
             Console.WriteLine()
-
+            Console.Write("Times Rolled:    ")
             For i = 0 To 10
                 txt = String.Format("{0, 10}", data(i)) & "|"
                 Console.Write(txt)
@@ -67,51 +67,15 @@ Module RollOfTheDiceLC
                              ByVal maximum As Single) As Single
 
         Dim value As Single
-        Dim rtrn As Integer
-        Dim tmp As Integer
-        Dim goodData As Boolean
+        'Dim rtrn As Integer
+        'Dim tmp As Integer
+        'Dim goodData As Boolean
         'Do
-        '    For i = 1 To 1
+        '    For i = 1 To 6
         '        value = ((maximum - minimum + 1) * Rnd()) + minimum
         '        tmp = CInt(value)
-        '        If tmp = 2 Then
-        '            rtrn = 2
-        '            Exit Do
-        '        ElseIf tmp = 12 Then
-        '            rtrn = 12
-        '            Exit Do
-        '        End If
-        '    Next
-        '    For i = 1 To 2
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 3 Then
-        '            rtrn = 3
-        '            Exit Do
-        '        ElseIf tmp = 11 Then
-        '            rtrn = 11
-        '            Exit Do
-        '        End If
-        '    Next
-        '    For i = 1 To 3
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 4 Then
-        '            rtrn = 4
-        '            Exit Do
-        '        ElseIf tmp = 10 Then
-        '            rtrn = 10
-        '            Exit Do
-        '        End If
-        '    Next
-        '    For i = 1 To 4
-        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
-        '        tmp = CInt(value)
-        '        If tmp = 5 Then
-        '            rtrn = 5
-        '            Exit Do
-        '        ElseIf tmp = 9 Then
-        '            rtrn = 9
+        '        If tmp = 7 Then
+        '            rtrn = 7
         '            Exit Do
         '        End If
         '    Next
@@ -126,11 +90,47 @@ Module RollOfTheDiceLC
         '            Exit Do
         '        End If
         '    Next
-        '    For i = 1 To 6
+        '    For i = 1 To 4
         '        value = ((maximum - minimum + 1) * Rnd()) + minimum
         '        tmp = CInt(value)
-        '        If tmp = 7 Then
-        '            rtrn = 7
+        '        If tmp = 5 Then
+        '            rtrn = 5
+        '            Exit Do
+        '        ElseIf tmp = 9 Then
+        '            rtrn = 9
+        '            Exit Do
+        '        End If
+        '    Next
+        '    For i = 1 To 3
+        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
+        '        tmp = CInt(value)
+        '        If tmp = 4 Then
+        '            rtrn = 4
+        '            Exit Do
+        '        ElseIf tmp = 10 Then
+        '            rtrn = 10
+        '            Exit Do
+        '        End If
+        '    Next
+        '    For i = 1 To 2
+        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
+        '        tmp = CInt(value)
+        '        If tmp = 3 Then
+        '            rtrn = 3
+        '            Exit Do
+        '        ElseIf tmp = 11 Then
+        '            rtrn = 11
+        '            Exit Do
+        '        End If
+        '    Next
+        '    For i = 1 To 1
+        '        value = ((maximum - minimum + 1) * Rnd()) + minimum
+        '        tmp = CInt(value)
+        '        If tmp = 2 Then
+        '            rtrn = 2
+        '            Exit Do
+        '        ElseIf tmp = 12 Then
+        '            rtrn = 12
         '            Exit Do
         '        End If
         '    Next
@@ -140,7 +140,6 @@ Module RollOfTheDiceLC
         '        goodData = True
         '    End If
         'Loop Until goodData = True
-
         'Return rtrn
 
 
