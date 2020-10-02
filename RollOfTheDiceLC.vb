@@ -1,4 +1,4 @@
-﻿Option Strict Off
+﻿Option Strict On
 Option Explicit On
 Option Compare Text
 
@@ -71,7 +71,7 @@ Module RollOfTheDiceLC
     Function GetRandomNumber(ByVal minimum As Single,
                              ByVal maximum As Single) As Single
 
-        Dim value1, value2 As Single
+        Dim value1, value2 As Double
         Dim sum As Integer
         'rolls two 'dice'  each gives a number from 0.5 to 6.5 and rounds to the nearest whole number
         'they are then added together like real dice for a number between 2 and 12
